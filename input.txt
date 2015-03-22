@@ -1,0 +1,29 @@
+  Program -->     Block 
+   Program -->    Block More
+   Block   -->     begin Body end
+   More    -->     More Extra
+   More    -->     More Body
+   Extra   -->     Extra Body
+   Extra   -->     Body Another
+   Another -->    Another ,  SS
+   Another -->     Another ,  SR
+   Another -->     SR More
+   Body    -->     S  Body
+   Body    -->     S 
+   S       -->     Block
+   S       -->     var = Exp
+   S       -->     Print ExpList
+   S       -->     SS SR
+   S       -->     Empty-string
+   S       -->     If Exp then SS endif
+   S       -->     If Exp then S else S endif
+   Others  -->     Read IdList
+   IdList  -->     id , IdList
+   IdList  -->     id
+   SS      -->     S , More
+   SS      -->     Empty-string
+   SR      -->     SS : SR
+   ExpList -->     Exp
+   ExpList -->     Exp , ExpList
+   Exp     -->     var
+   Exp     -->     Empty-string
